@@ -16,7 +16,7 @@ Then redirection vers la page Home et verifier alert
 @checkout @smoke
   Scenario: tester  checkout
     When je clique chekout
-    And je saisie firstName "moez"
+    And je saisie firstName "aziz"
     And je saisie lastName "gheribi"
     And je saisie code poste "1200"
     And je clique continue
