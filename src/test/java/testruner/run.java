@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
             "pretty",
                 "html:target\\cucumber\\rapport.html",
                 "json:target\\cucumber\\rapport1.json"
-
+//test
         }
 
 )
