@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.*;
@@ -24,11 +25,15 @@ public class global {
     checkoutpage checkoutpage;
     logoutpage logoutpage;
 
+
     @Given("je suis dans le site swaglab")
     public void je_suis_dans_le_site_swaglab() {
-        WebDriver delegate = new ChromeDriver();
+       // WebDriver delegate = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless"); // Recommandé pour le CI
+        WebDriver driver = new ChromeDriver(options);
 // On utilise .create() au lieu de .delegate()
-        SelfHealingDriver driver = SelfHealingDriver.create(delegate);
+        //SelfHealingDriver driver = SelfHealingDriver.create(delegate);
         driver.manage().window().maximize();
         driver.navigate().to("https://www.saucedemo.com/");
 
